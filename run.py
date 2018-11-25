@@ -21,4 +21,4 @@ app.on_insert_devices += hooks.on_insert_devices
 app.on_replace_devices += hooks.on_replace_devices
 
 if __name__ == '__main__':
-    app.run(host=host, port=port, debug=True)
+    app.run(host=host, port=port, debug='DEBUG' in os.environ)
