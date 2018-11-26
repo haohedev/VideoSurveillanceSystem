@@ -63,7 +63,8 @@ def get_device_info(ip, port, user, password):
     }
     channels = []
     for i, param in enumerate(response_json['params'][4]['params']['table']):
-        channels.append({k.lower(): v for k, v, in param.items()})
+        # channels.append({k.lower(): v for k, v, in param.items()})
+        channels.append({'name': param['Name']})
         if response_json['params'][7]['result']:
             states = response_json['params'][7]['params']['states']
             channels[i].update({
@@ -71,7 +72,7 @@ def get_device_info(ip, port, user, password):
                 'online': states[i]['connectionState'] == 'Connected' if 'connectionState' in states[i] else False
             })
         else:
-            channels[i].update({'inputPort': i + 1})
+            channels[i].update({'inputPort': i + 1, 'online': True})
         params = response_json['params'][5]['params']['table']
         if params[i] is not None:
             for key, stream in (('mainStream', 'MainFormat'), ('subStream', 'ExtraFormat')):
