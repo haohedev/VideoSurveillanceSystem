@@ -24,17 +24,16 @@
         {
             "name" : "Camera 01",
             "inputPort" : 1,
+            "online": true,
             "mainStream" : {
                 "videoEnable" : true,
                 "vcodec" : "H.264",
-                "frame" : 25,
                 "audioEnable" : true,
                 "acodec" : "G.711ulaw"
             },
             "subStream" : {
                 "videoEnable" : true,
                 "vcodec" : "H.264",
-                "frame" : 6,
                 "audioEnable" : true,
                 "acodec" : "G.711ulaw"
             }
@@ -45,10 +44,12 @@
 
 ### 已验证设备的型号
 
-**海康NVR**：`DS-8832N-K8`  
+**海康NVR**：`DS-8832N-K8`   `DS-7816N-K2`  
 **海康DVR**：`DS-7804HW-E1/M` `DS-7816H-SNH`  
-**海康IPC**：  
+**海康IPC**： `DS-7804N-SN`  `DS-2CD40653DEF-T`  
+**海康IPD**： `DS-2DF5284-A`  `DS-2DE7235DI-A`  
 
 **大华NVR**：`DH-NVR4832-4KS2`  
 **大华DVR**：  
-**大华IPC**：`IPC-HFW1105B`
+**大华IPC**：`IPC-HFW1105B`  
+**大华IPD**： `DH-SD-6A1230S-HN`
