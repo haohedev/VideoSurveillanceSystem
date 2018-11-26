@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 
-MONGO_URI = os.environ.get('MONGODB_URI', 'mongodb://root:heheniuniu219@23.106.152.88:27017/video?authSource=admin')
+MONGO_URI = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/video')
 
 RESOURCE_METHODS = ['GET', 'POST', 'DELETE']
 
@@ -60,13 +60,40 @@ devices = {
             'type': 'string',
             'readonly': True,
         },
+        'protocol': {
+            'type': 'dict',
+            'readonly': True,
+            'schema': {
+                'name': {'type': 'string'},
+                'port': {'type': 'integer'}
+            }
+        },
         'channels': {
             'type': 'list',
             'readonly': True,
             'schema': {
                 'inputPort': {'type': 'string'},
                 'name': {'type': 'string'},
-                'videoFormat': {'type': 'string'}
+                'mainStream': {
+                    'type': 'dict',
+                    'schema': {
+                        'videoEnable': {'type': 'boolean'},
+                        'vcodec': {'type': 'string'},
+                        'frame': {'type': 'integer'},
+                        'audioEnable': {'type': 'boolean'},
+                        'acodec': {'type': 'string'}
+                    }
+                },
+                'subStream': {
+                    'type': 'dict',
+                    'schema': {
+                        'videoEnable': {'type': 'boolean'},
+                        'vcodec': {'type': 'string'},
+                        'frame': {'type': 'integer'},
+                        'audioEnable': {'type': 'boolean'},
+                        'acodec': {'type': 'string'}
+                    }
+                }
             }
         }
     }
