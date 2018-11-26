@@ -7,6 +7,9 @@ RESOURCE_METHODS = ['GET', 'POST', 'DELETE']
 
 ITEM_METHODS = ['GET', 'PUT', 'DELETE']
 
+X_DOMAINS = '*'
+X_HEADERS = ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Connection', 'User-Agent', 'Cookie']
+
 devices = {
     'item_title': 'devices',
 
